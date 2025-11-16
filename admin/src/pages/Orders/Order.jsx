@@ -4,7 +4,7 @@ import { useState } from 'react'
 import {toast} from 'react-toastify'
 import axios from 'axios'
 import { useEffect } from 'react'
-import { assets } from '../../assets/assets'
+import { assets } from '../../assets/assets.js'
 
 const Order = ({url}) => {
 

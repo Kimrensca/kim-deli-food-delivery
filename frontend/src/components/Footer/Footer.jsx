@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';          // ← NEW
 import './Footer.css';
-import { assets } from '../../assets/assets';
+import { assets } from '../../assets/assets.js';
 
 const Footer = () => {
   return (
