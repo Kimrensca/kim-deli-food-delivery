@@ -55,5 +55,4 @@ mongodump/
 dump/
 
 # Images (optional – only if huge)
-frontend/src/assets
-admin/src/assets
+
