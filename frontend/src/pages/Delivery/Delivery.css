@@ -1,0 +1,14 @@
+.delivery-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .delivery-page h1 {
+    color: #ff6b35;
+    margin-bottom: 20px;
+  }
+  
+  .delivery-page ul {
+    padding-left: 20px;
+  }
