@@ -1,16 +1,15 @@
 import React from 'react'
 import './Order.css'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {toast} from 'react-toastify'
 import axios from 'axios'
-import { useEffect } from 'react'
 import { assets } from '../../assets/assets.js'
 
 const Order = ({url}) => {
 
   const [orders, setOrders] = useState([]);
 
-  const fetchAllOrders = async () => {
+  const fetchAllOrders = useCallback(async () => {
     const response = await axios.get(url+"/api/order/list");
     if (response.data.success){
       setOrders(response.data.data);
@@ -19,7 +18,7 @@ const Order = ({url}) => {
   else {
     toast.error("Error")
   }
-}
+}, [url]);
 
 const statusHandler = async (event, orderId) =>{
   const response = await axios.post(url+"/api/order/status", {
@@ -33,8 +32,7 @@ const statusHandler = async (event, orderId) =>{
 
 useEffect(() => {
   fetchAllOrders();
-},[])
-
+},[fetchAllOrders])
   return (
     <div className='order add'>
       <h3>Order Page</h3>
