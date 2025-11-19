@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 import axios from "axios";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -7,11 +7,9 @@ export const StoreContext = createContext();
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   //const url = "http://localhost:4000";
-  // Replace this line
-  //const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
-
-// With this (just for testing)
-  const url = "https://kim-deli-food-delivery-backend.onrender.com";              
+  
+  const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
+              
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const [loading, setLoading] = useState(true);     // <-- UI feedback
@@ -75,7 +73,7 @@ const StoreContextProvider = (props) => {
   };
 
   /* ---------- FETCH FOOD LIST ---------- */
-  const fetchFoodList = async () => {
+  const fetchFoodList = useCallback(async () => {
     try {
       setLoading(true);
       const res = await axios.get(`${url}/api/food/list`);
@@ -86,10 +84,10 @@ const StoreContextProvider = (props) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [url]);
 
   /* ---------- LOAD CART FROM SERVER (only when logged in) ---------- */
-  const loadCartData = async (token) => {
+  const loadCartData = useCallback(async (token) => {
     try {
       const res = await axios.post(
         `${url}/api/cart/get`,
@@ -100,7 +98,7 @@ const StoreContextProvider = (props) => {
     } catch (err) {
       console.error("Load cart error:", err);
     }
-  };
+  }, [url]);
 
   /* ---------- INITIAL LOAD ---------- */
   useEffect(() => {
@@ -113,7 +111,7 @@ const StoreContextProvider = (props) => {
       }
     }
     init();
-  }, []);
+  }, [fetchFoodList, loadCartData]);
 
   const contextValue = {
     food_list,
