@@ -1,7 +1,7 @@
 
 # KimDeli – Food Delivery Web App
 
-**Live Demo:** [https://kimdeli.vercel.app](https://kimdeli.vercel.app)  
+**Live Demo:** [https://kim-deli-food-delivery-ui28.vercel.app](https://kim-deli-food-delivery-ui28.vercel.app)  
 **Fast. Fresh. Friendly.** – Kenya’s modern food delivery experience.
 
 ---
@@ -55,8 +55,9 @@ Food-Delivery-Web/
 
 | Service     | URL |
 |-----------|-----|
-| **Frontend**  | [https://kimdeli.vercel.app](https://kimdeli.vercel.app) |
-| **Backend API** | `https://food-delivery-backend-1.onrender.com` |
+| **Frontend**  | [https://kim-deli-food-delivery-ui28.vercel.app](https://kim-deli-food-delivery-ui28.vercel.app) |
+| **Backend API** | `https://kim-deli-food-delivery-backend.onrender.com` |
+| **Admin** | [https://kim-deli-food-delivery-nr3q-admin.vercel.app](https://kim-deli-food-delivery-nr3q-admin.vercel.app) |
 
 ---
 
@@ -65,7 +66,7 @@ Food-Delivery-Web/
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourusername/kimdeli-food-delivery.git
+git clone https://github.com/Kimrensca/kim-deli-food-delivery.git
 cd kimdeli-food-delivery
 ```
 
@@ -75,6 +76,7 @@ cd kimdeli-food-delivery
 cd backend
 npm install
 npm start
+npm run server
 ```
 
 Server runs on: `http://localhost:4000`
@@ -145,9 +147,9 @@ vercel --prod
 
 ## Author
 
-**Your Name**  
+**Caren Musimbi**  
 Kenyan Full-Stack Developer  
-[GitHub](https://github.com/yourusername) | [LinkedIn](https://linkedin.com/in/yourprofile)
+[GitHub](https://github.com/Kimrensca) | [LinkedIn](www.linkedin.com/in/carren-musimbi-9219002b2)
 
 ---
 
