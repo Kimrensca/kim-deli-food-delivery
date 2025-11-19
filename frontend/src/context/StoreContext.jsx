@@ -6,7 +6,12 @@ export const StoreContext = createContext();
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "http://localhost:4000";               // <-- HTTP, NOT HTTPS
+  //const url = "http://localhost:4000";
+  // Replace this line
+  //const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+// With this (just for testing)
+  const url = "https://kim-deli-food-delivery-backend.onrender.com";              
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const [loading, setLoading] = useState(true);     // <-- UI feedback

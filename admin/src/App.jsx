@@ -10,7 +10,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const url = "http://localhost:4000";
+  //const url = "http://localhost:4000";
+  // Replace this line
+const url = import.meta.env.VITE_API_URL || "http://localhost:4000";
+
+// With this (just for testing)
+//const url = "https://kim-deli-food-delivery-backend.onrender.com";
   return (
     <div>
       <ToastContainer />
